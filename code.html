@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>ByteRun - Code Editor</title>
+    <style>
+     
+    </style>
+</head>
+<body>
+    <navbar>
+        <div class="logo"><a href="index.html">Byte<span>Run</span></a></div>
+        <div class="buttons">
+            <a href="index.html" class="compiler-btn">Home</a>
+        </div>
+    </navbar>
+
+    <!-- Title Section -->
+    <h1>💻 Start Coding</h1> <!-- Replaced the keyboard icon with a computer/laptop emoji -->
+    <h4>Write your code below in the editor. As you type, your code will automatically appear in the live preview on the bottom.</h4>
+
+    <!-- Code Editors Section -->
+    <div class="code-area">
+        <div class="editor html-code">
+            <div class="section-title">
+                📄 Use HTML for structure
+                <button class="copy-btn" onclick="copyContent('htmlCode')">Copy to Clipboard</button>
+            </div>
+            <textarea id="htmlCode" placeholder="Write HTML code here..."></textarea>
+        </div>
+
+        <div class="editor css-code">
+            <div class="section-title">
+                🎨 Style your code with CSS
+                <button class="copy-btn" onclick="copyContent('cssCode')">Copy to Clipboard</button>
+            </div>
+            <textarea id="cssCode" placeholder="Write CSS code here..."></textarea>
+        </div>
+
+        <div class="editor js-code">
+            <div class="section-title">
+                ⚙️ Add interactivity with JS
+                <button class="copy-btn" onclick="copyContent('jsCode')">Copy to Clipboard</button>
+            </div>
+            <textarea id="jsCode" placeholder="Write JavaScript code here..."></textarea>
+        </div>
+    </div>
+
+    <div class="section-title">
+        See your code in action
+    </div>
+    <iframe id="output"></iframe>
+
+    <footer>
+        <div class="logo-and-details">
+            <div class="logo">Byte<span>Run</span></div>
+            <div>Made with ❤️ by Abhishek Mukherjee.</div>
+        </div>
+        <div class="social-icons">
+            <a href="https://github.com/abhishekkmukherjee" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://x.com/abmukherjee" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        function compile() {
+            var html = document.getElementById("htmlCode").value;
+            var css = document.getElementById("cssCode").value;
+            var js = document.getElementById("jsCode").value;
+            var code = document.getElementById("output").contentWindow.document;
+
+            code.open();
+            code.write(html + "<style>" + css + "</style>" + "<script>" + js + "</" + "script>");
+            code.close();
+        }
+
+        document.getElementById("htmlCode").addEventListener("keyup", compile);
+        document.getElementById("cssCode").addEventListener("keyup", compile);
+        document.getElementById("jsCode").addEventListener("keyup", compile);
+
+        function copyContent(id) {
+            var content = document.getElementById(id).value;
+            navigator.clipboard.writeText(content).then(() => {
+                alert('Copied to clipboard!');
+            });
+        }
+    </script>
+</body>
+</html>
