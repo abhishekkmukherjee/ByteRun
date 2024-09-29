@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>ByteRun - Code Editor</title>
-    <style>
-     
-    </style>
+   <!--fontawesome icons-->
+
+   <script src="https://kit.fontawesome.com/4cea77f1c2.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <navbar>
@@ -18,7 +18,7 @@
     </navbar>
 
     <!-- Title Section -->
-    <h1>💻 Start Coding</h1> <!-- Replaced the keyboard icon with a computer/laptop emoji -->
+    <h1> Start Coding</h1> <!-- Replaced the keyboard icon with a computer/laptop emoji -->
     <h4>Write your code below in the editor. As you type, your code will automatically appear in the live preview on the bottom.</h4>
 
     <!-- Code Editors Section -->
@@ -64,28 +64,7 @@
         </div>
     </footer>
 
-    <script>
-        function compile() {
-            var html = document.getElementById("htmlCode").value;
-            var css = document.getElementById("cssCode").value;
-            var js = document.getElementById("jsCode").value;
-            var code = document.getElementById("output").contentWindow.document;
-
-            code.open();
-            code.write(html + "<style>" + css + "</style>" + "<script>" + js + "</" + "script>");
-            code.close();
-        }
-
-        document.getElementById("htmlCode").addEventListener("keyup", compile);
-        document.getElementById("cssCode").addEventListener("keyup", compile);
-        document.getElementById("jsCode").addEventListener("keyup", compile);
-
-        function copyContent(id) {
-            var content = document.getElementById(id).value;
-            navigator.clipboard.writeText(content).then(() => {
-                alert('Copied to clipboard!');
-            });
-        }
-    </script>
+   
 </body>
+<script src="script.js"></script>
 </html>
