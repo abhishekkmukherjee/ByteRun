@@ -95,7 +95,7 @@ h1 {
 
 h4 {
   font-size: 1.2rem;
-  background: linear-gradient(to right, #00e0ff, #00b0ff);
+  background: linear-gradient(to right, #f3fbff, #00e0ff);
   -webkit-background-clip: text;
   color: transparent;
   margin-bottom: 1rem;
@@ -232,10 +232,11 @@ iframe {
   display: flex;
   align-items: center;
   padding: 0.5rem 1rem;
+  font-size: large;
   font-weight: 600;
   border-radius: 5px;
   margin-bottom: 0.5rem;
-  background: linear-gradient(to right, #00b0ff, #00e0ff);
+  background: linear-gradient(to right, #f3fbff, #00e0ff);  
   -webkit-background-clip: text;
   color: transparent;
 }
