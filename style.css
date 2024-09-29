@@ -133,6 +133,7 @@ navbar {
 
 .buttons {
   display: flex;
+ 
   gap: 1rem;
 
   border: none;
@@ -252,7 +253,33 @@ iframe {
     -webkit-background-clip: text;
     color: transparent;
   }
+  .buttons {
+    display: flex;
+    flex-direction: row !important;
+  
+    
+      gap: 0.4rem; /* Reduce the gap between buttons */
+      padding: 2px 4px !important ; /* Make buttons smaller */
+      font-size: smaller !important;
+      
+  
+  
+    border: none;
+    border-radius: 8px;
+    color: white;
+  
+    letter-spacing: 2px;
+    cursor: pointer;
+    position: relative;
+    transition: 0.3s;
+    outline: none;
+  
+   
+    
+   
+  }
 }
+
 
 
 .copy-btn:hover {
@@ -369,3 +396,5 @@ h1{
       margin: 0.5rem !important;
   }
 }
+
+
